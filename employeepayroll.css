@@ -1,125 +1,142 @@
-body{
-    margin: 0;
-    height: 100%;
-}
-.header{
-    padding: 15px 0;
-    background-color: white;
-}
-.header-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: 0px solid green;
-}
-.logo-content{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 0px solid green;
-    width: 80%;
-}
-.logo-content-img{ 
-    border: solid 0px #42515f;
-}
-.emp-text{
-    font: normal normal bold 20px/25px Montserrat;
-    font-family: "Montserrat", sans-serif;
-    letter-spacing: 0px;
-    color:#82a70c;
-    text-transform: capitalize;
-}
-.emp-payroll{ 
-    color: #42515f;
-}
-*{box-sizing: border-box;}
-.form-content {
-    min-height: calc(100% - 80px);
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0px solid green;
-} 
-.form {
-    width: 65%;
-    padding: 44px 50px;
-    background: white;
-    box-shadow: 0px 3px 6px grey;
-    border: 1px solid white;
-    opacity: 1;
-    margin-top: 10px;
-    border-radius: 8px;
-} 
-.form-head {
-    font: normal normal bold 24px/37px Roboto;
-    letter-spacing: 0px;
-    color: #42515f;
-    text-transform: capitalize;
-    opacity: 1;
-    padding-bottom: 20px;
-}
-.row-content {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
-    align-items: center;
-    border: 0 px solid green;
-    flex-flow: wrap;
-} 
-.label {
-    width: 20%;
-}
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-} 
-.label-text{
-    font-size: larger;
-}
-.text {
-    font-size: 8px;
-    color: black;
-    opacity: 1;
-    font-family: Roboto;
-}
-.input {
-    width: 60%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-}
-.profile-radio-content {
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-} 
-.profile-radio-content > label {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-} 
-.profile {
-    width: 24px;
-    margin-left: 12px;
-    border-radius: 5px;
-}
-.gender {
-    display: flex;
-    justify-content: space-between;
-}
-#salary {
-    width: 70%;
-}
-select {
-    padding: 8px;
-    border-radius: 6px;
-    font: normal normal 16px Roboto;
-    resize: vertical;
-    border: 1px solid;
-    letter-spacing: 0px;
-    color: #8f98a1;
-    background-color: transparent;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employee Payroll Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/employeepayroll.css">
+</head>
+<body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="../Assets/logo.jpg" alt="" width="80" height="65">
+                <div>
+                    <span class="emp-text">EMPLOYEE</span><br>
+                    <span class="emp-text emp-payroll">PAYROLL</span>
+                </div>
+        </div>
+    </header>
+    <div class="form-content">
+        <form class="form" action="#" onsubmit="save();return false">
+            <div class="form-head">
+                Employee Payroll Form</div>
+            <div class="row-content">
+                <label class="label-text">Name :</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Your name..." required>
+            </div>
+            <div class="row-content">
+                <label class=" label-text" for="profile">Profile Image</label>
+                <div class="profile-radio-content">
+                    <label>
+                        <input type="radio" id="profile1" name="profile"
+                            value="../Assets/pic1.jpg " required>
+                        <img class="profile" id="image1" src="../Assets/pic1.jpg">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile2" name="profile"
+                            value="../Assets/pic2.jpg " required>
+                        <img class="profile" id="image2" src="../Assets/pic2.jpg">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile3" name="profile"
+                            value="../Assets/pic3.jpg " required>
+                        <img class="profile" id="image3" src="../Assets/pic3.jpg">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile4" name="profile"
+                            value=" ../Assets/pic4.jpg" required>
+                        <img class="profile" id="image4" src="../Assets/pic4.jpg">
+                    </label>
+                </div>
+            </div>
+                <div class="row-content">
+                    <label class=" label-text" for="gender">Gender</label>
+                    <div>
+                        <input type="radio" id="male" value="male" name="gender">
+                        <label class="text" for="male">Male</label>
+                        <input type="radio" id="female" value="female" name="gender">
+                        <label class="text" for="female">Female</label>
+                    </div>
+                </div>
+                <div class="row-content">
+                    <label class="label-text" for="department">Department</label>
+                    <div>
+                        <input class="checkbox" type="checkbox" id="hr" value="HR" name="department">
+                        <label class="text" for="Hr">HR</label>
+                        <input class="checkbox" type="checkbox" id="Sales" value="Sales" name="department">
+                        <label class="text" for="Sales">Sales</label>
+                        <input class="checkbox" type="checkbox" id="finance" value="finance" name="department">
+                        <label class="text" for="finance">Finance</label>
+                        <input class="checkbox" type="checkbox" id="engineer" value="engineer" name="department">
+                        <label class="text" for="engineer">Engineer</label>
+                    </div>
+                </div>
+                <div class="row-content">
+                    <label class="label-text" for="salary">Salary:</label>
+                    <input class="input" type="range" id="salary" name="salary" min="300000" max="500000" step="100"
+                        value="350000">
+                    <output class="salary-output text">400000</output>
+                </div>
+                <div class="row-content">
+                    <label class="label-text" for="StartDate">Start Date:</label>
+                    <div class>
+                        <select id="day" name="day">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        <select id="month" name="month">
+                            <option value="jan">January</option>
+                            <option value="feb">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                            <option value="May">May</option>
+                            <option value="june">June</option>
+                            <option value="july">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="october">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                        <select id="year" name="year">
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                        </select>
+                    </div>
+                </div>
+        </form>
+    </div>
+</body>
+</html>
